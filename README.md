@@ -604,6 +604,7 @@ The File transport should really be the 'Stream' transport since it will accept 
 * __filename:__ The filename of the logfile to write output to.
 * __maxsize:__ Max size in bytes of the logfile, if the size is exceeded then a new file is created.
 * __maxFiles:__ Limit the number of files created when the size of the logfile is exceeded.
+* __fileDroppingHandler:__ A function that handles the log file which is going to be dropped. When the number of log files exeeds maxFiles, the earliest log file would be removed by default, if the file is expected to be kept there or backuped later(or anything else than deleting it), do the logic in this handler. It only takes effect when maxsize and maxFiles are specified.
 * __stream:__ The WriteableStream to write output to.
 * __json:__ If true, messages will be logged as JSON (default true).
 
